@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniel | Software Engineer</title>
+    <style>
+        /* Variáveis de Cores (Tema Dark Corporativo) */
+        :root {
+            --fundo: #0d1117;
+            --fundo-card: #161b22;
+            --texto-principal: #c9d1d9;
+            --destaque: #58a6ff;
+            --borda: #30363d;
+            --tag-bg: rgba(88, 166, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--fundo);
+            color: var(--texto-principal);
+            line-height: 1.6;
+        }
+
+        /* Cabeçalho Executivo */
+        header {
+            text-align: center;
+            padding: 80px 20px;
+            border-bottom: 1px solid var(--borda);
+        }
+
+        header h1 {
+            color: #ffffff;
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #8b949e;
+        }
+
+        /* Seção de Projetos */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        h2 {
+            color: #ffffff;
+            margin-bottom: 40px;
+            font-size: 2.2rem;
+            text-align: center;
+        }
+
+        .grid-projetos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        /* Cartões de Operação */
+        .card {
+            background-color: var(--fundo-card);
+            border: 1px solid var(--borda);
+            border-radius: 8px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--destaque);
+            box-shadow: 0 8px 24px rgba(88, 166, 255, 0.1);
+        }
+
+        .card h3 {
+            color: var(--destaque);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .card p {
+            flex-grow: 1; /* Faz as tags ficarem alinhadas no fundo do card */
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
+        .tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            border-top: 1px solid var(--borda);
+            padding-top: 15px;
+        }
+
+        .tag {
+            background-color: var(--tag-bg);
+            color: var(--destaque);
+            padding: 5px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        /* Rodapé de Contato */
+        footer {
+            text-align: center;
+            padding: 50px 20px;
+            border-top: 1px solid var(--borda);
+            margin-top: 20px;
+        }
+
+        .btn-contato {
+            display: inline-block;
+            background-color: #238636;
+            color: white;
+            text-decoration: none;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+            margin: 10px;
+        }
+
+        .btn-contato:hover {
+            background-color: #2ea043;
+        }
+        
+        .btn-github {
+            background-color: #21262d;
+            border: 1px solid var(--borda);
+        }
+        
+        .btn-github:hover {
+            background-color: #30363d;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Daniel</h1>
+        <p>Engenheiro de Software | Python, Dados, IA & Game Dev</p>
+    </header>
+
+    <div class="container">
+        <h2>Arsenal de Operações (GitHub)</h2>
+        <div class="grid-projetos">
+            
+            <div class="card">
+                <h3>Operação Zero (Unity 2D)</h3>
+                <p>Jogo 2D de ação e coleta desenvolvido do zero na engine Unity, apresentando mecânicas avançadas e uma Inteligência Artificial programada para realizar rotas de patrulha autônoma.</p>
+                <div class="tags">
+                    <span class="tag">C#</span>
+                    <span class="tag">Unity3D</span>
+                    <span class="tag">Game Dev</span>
+                    <span class="tag">IA (Patrulha)</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Sistema ALPR (Visão Computacional)</h3>
+                <p>Motor de processamento óptico capaz de rastrear, isolar e extrair caracteres de placas veiculares com precisão, utilizando algoritmos de detecção de bordas e binarização de contraste.</p>
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">OpenCV</span>
+                    <span class="tag">Tesseract OCR</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Analisador de PDFs com IA</h3>
+                <p>Ferramenta de automação corporativa que utiliza Inteligência Artificial para ler, processar e extrair informações críticas de documentos PDF em lote de forma inteligente.</p>
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Automação</span>
+                    <span class="tag">Inteligência Artificial</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Cofre ERP de Estoque (SQL)</h3>
+                <p>Sistema tático de gestão logística com integração relacional. Processa fluxo de mercadorias e utiliza Queries SQL avançadas para calcular saldos e disparar alertas automáticos.</p>
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">SQLite</span>
+                    <span class="tag">Lógica de Negócios</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Secretária IA (NLP Extrativo)</h3>
+                <p>Pipeline de Speech-to-Text integrado a um motor matemático LSA para gerar atas executivas. Opera 100% offline para garantir a privacidade de dados corporativos confidenciais.</p>
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">NLP</span>
+                    <span class="tag">Manipulação Acústica</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Web Scraping & Alertas Telegram</h3>
+                <p>Robô autônomo que realiza a extração de dados da web (Scraping), monitora alvos predefinidos e dispara notificações táticas em tempo real através da API do Telegram.</p>
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Web Scraping</span>
+                    <span class="tag">Integração de APIs</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Dashboard Cripto Financeiro</h3>
+                <p>Painel analítico para monitoramento de ativos digitais, responsável por extrair dados em tempo real do mercado financeiro e apresentá-los em uma interface visual de fácil leitura.</p>
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Análise de Dados</span>
+                    <span class="tag">Finanças</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Motor Gráfico Snake (Pygame)</h3>
+                <p>Clone do clássico Snake construído focado no domínio da arquitetura de Game Loop, física de colisão em matriz cartesiana e controle seguro de gerenciamento de estados de memória.</p>
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Pygame</span>
+                    <span class="tag">State Management</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <h2>Pronto para a próxima missão?</h2>
+        <p>Análise meu código-fonte completo ou inicie contato para oportunidades operacionais.</p>
+        <div style="margin-top: 20px;">
+            <a href="https://github.com/oxXDanielXxo" target="_blank" class="btn-contato btn-github">Acessar GitHub</a>
+            <a href="mailto:seu-email@dominio.com" class="btn-contato">Iniciar Contato Direto</a>
+        </div>
+    </footer>
+
+</body>
+</html>
