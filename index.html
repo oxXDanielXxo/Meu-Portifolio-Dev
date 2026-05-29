@@ -13,6 +13,8 @@
             --destaque: #58a6ff;
             --borda: #30363d;
             --tag-bg: rgba(88, 166, 255, 0.1);
+            --tag-js: rgba(247, 223, 30, 0.15); /* Cor especial para JS */
+            --destaque-js: #f7df1e;
         }
 
         * {
@@ -28,7 +30,6 @@
             line-height: 1.6;
         }
 
-        /* Cabeçalho Executivo */
         header {
             text-align: center;
             padding: 80px 20px;
@@ -46,9 +47,8 @@
             color: #8b949e;
         }
 
-        /* Seção de Projetos */
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 50px 20px;
         }
@@ -62,11 +62,11 @@
 
         .grid-projetos {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            /* Layout responsivo: adapta para 3 ou 4 colunas em monitores grandes */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
         }
 
-        /* Cartões de Operação */
         .card {
             background-color: var(--fundo-card);
             border: 1px solid var(--borda);
@@ -86,18 +86,18 @@
         .card h3 {
             color: var(--destaque);
             margin-bottom: 15px;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
         }
 
         .card p {
-            flex-grow: 1; /* Faz as tags ficarem alinhadas no fundo do card */
+            flex-grow: 1;
             margin-bottom: 20px;
             font-size: 0.95rem;
         }
 
         .tags {
             display: flex;
-            gap: 10px;
+            gap: 8px;
             flex-wrap: wrap;
             border-top: 1px solid var(--borda);
             padding-top: 15px;
@@ -106,13 +106,17 @@
         .tag {
             background-color: var(--tag-bg);
             color: var(--destaque);
-            padding: 5px 12px;
+            padding: 4px 10px;
             border-radius: 12px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: bold;
         }
+        
+        .tag.js {
+            background-color: var(--tag-js);
+            color: var(--destaque-js);
+        }
 
-        /* Rodapé de Contato */
         footer {
             text-align: center;
             padding: 50px 20px;
@@ -128,7 +132,6 @@
             padding: 12px 28px;
             border-radius: 6px;
             font-weight: bold;
-            margin-top: 20px;
             transition: background-color 0.3s ease;
             margin: 10px;
         }
@@ -151,7 +154,7 @@
 
     <header>
         <h1>Daniel</h1>
-        <p>Engenheiro de Software | Python, Dados, IA & Game Dev</p>
+        <p>Software Engineer | Full-Cycle, Python, IA & Game Dev</p>
     </header>
 
     <div class="container">
@@ -160,18 +163,38 @@
             
             <div class="card">
                 <h3>Operação Zero (Unity 2D)</h3>
-                <p>Jogo 2D de ação e coleta desenvolvido do zero na engine Unity, apresentando mecânicas avançadas e uma Inteligência Artificial programada para realizar rotas de patrulha autônoma.</p>
+                <p>Jogo 2D de ação e coleta com IA de patrulha desenvolvido do zero na engine Unity, apresentando mecânicas avançadas e shaders customizados.</p>
                 <div class="tags">
                     <span class="tag">C#</span>
                     <span class="tag">Unity3D</span>
                     <span class="tag">Game Dev</span>
-                    <span class="tag">IA (Patrulha)</span>
+                    <span class="tag">IA</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Monitoramento IoT Industrial</h3>
+                <p>Sistema tático de Internet das Coisas (IoT) construído em Python para coletar, processar e monitorar dados de sensores aplicados à indústria.</p>
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">IoT</span>
+                    <span class="tag">Automação</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Motor Gráfico Snake</h3>
+                <p>Clone do clássico Snake focado no domínio de Game Loop, física de colisão e gerenciamento de estados utilizando a biblioteca Pygame.</p>
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Pygame</span>
+                    <span class="tag">Matemática</span>
                 </div>
             </div>
 
             <div class="card">
                 <h3>Sistema ALPR (Visão Computacional)</h3>
-                <p>Motor de processamento óptico capaz de rastrear, isolar e extrair caracteres de placas veiculares com precisão, utilizando algoritmos de detecção de bordas e binarização de contraste.</p>
+                <p>Motor óptico capaz de isolar e extrair caracteres de placas veiculares com precisão, utilizando detecção de bordas e OCR restrito.</p>
                 <div class="tags">
                     <span class="tag">Python</span>
                     <span class="tag">OpenCV</span>
@@ -180,62 +203,81 @@
             </div>
 
             <div class="card">
-                <h3>Analisador de PDFs com IA</h3>
-                <p>Ferramenta de automação corporativa que utiliza Inteligência Artificial para ler, processar e extrair informações críticas de documentos PDF em lote de forma inteligente.</p>
+                <h3>Organizador de Arquivos</h3>
+                <p>Script de automação do sistema operacional (OS) que varre diretórios e classifica documentos em lote de forma rápida e inteligente.</p>
                 <div class="tags">
                     <span class="tag">Python</span>
-                    <span class="tag">Automação</span>
-                    <span class="tag">Inteligência Artificial</span>
+                    <span class="tag">OS Automation</span>
+                    <span class="tag">File System</span>
                 </div>
             </div>
 
             <div class="card">
-                <h3>Cofre ERP de Estoque (SQL)</h3>
-                <p>Sistema tático de gestão logística com integração relacional. Processa fluxo de mercadorias e utiliza Queries SQL avançadas para calcular saldos e disparar alertas automáticos.</p>
+                <h3>Kanban Board Front-End</h3>
+                <p>Interface web interativa de gestão ágil de tarefas e projetos, construída no lado do cliente (Front-End) simulando metodologias de quadros de produção.</p>
                 <div class="tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">SQLite</span>
-                    <span class="tag">Lógica de Negócios</span>
+                    <span class="tag js">JavaScript</span>
+                    <span class="tag js">Front-End</span>
+                    <span class="tag js">UI/UX</span>
                 </div>
             </div>
 
             <div class="card">
-                <h3>Secretária IA (NLP Extrativo)</h3>
-                <p>Pipeline de Speech-to-Text integrado a um motor matemático LSA para gerar atas executivas. Opera 100% offline para garantir a privacidade de dados corporativos confidenciais.</p>
-                <div class="tags">
-                    <span class="tag">Python</span>
-                    <span class="tag">NLP</span>
-                    <span class="tag">Manipulação Acústica</span>
-                </div>
-            </div>
-
-            <div class="card">
-                <h3>Web Scraping & Alertas Telegram</h3>
-                <p>Robô autônomo que realiza a extração de dados da web (Scraping), monitora alvos predefinidos e dispara notificações táticas em tempo real através da API do Telegram.</p>
+                <h3>Scraping & Alertas Telegram</h3>
+                <p>Robô de extração de dados que monitora alvos na internet e dispara notificações táticas em tempo real através da API do Telegram.</p>
                 <div class="tags">
                     <span class="tag">Python</span>
                     <span class="tag">Web Scraping</span>
-                    <span class="tag">Integração de APIs</span>
+                    <span class="tag">APIs</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Analisador de PDFs com IA</h3>
+                <p>Ferramenta de processamento documental que utiliza Inteligência Artificial para ler e extrair informações críticas de PDFs corporativos.</p>
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">NLP</span>
+                    <span class="tag">Automação de Dados</span>
                 </div>
             </div>
 
             <div class="card">
                 <h3>Dashboard Cripto Financeiro</h3>
-                <p>Painel analítico para monitoramento de ativos digitais, responsável por extrair dados em tempo real do mercado financeiro e apresentá-los em uma interface visual de fácil leitura.</p>
+                <p>Painel analítico para monitoramento de ativos digitais, extraindo métricas financeiras de mercado e estruturando-as visualmente.</p>
                 <div class="tags">
                     <span class="tag">Python</span>
-                    <span class="tag">Análise de Dados</span>
+                    <span class="tag">Data Analysis</span>
                     <span class="tag">Finanças</span>
                 </div>
             </div>
 
             <div class="card">
-                <h3>Motor Gráfico Snake (Pygame)</h3>
-                <p>Clone do clássico Snake construído focado no domínio da arquitetura de Game Loop, física de colisão em matriz cartesiana e controle seguro de gerenciamento de estados de memória.</p>
+                <h3>Cofre ERP de Estoque (SQL)</h3>
+                <p>Gestor logístico relacional que processa fluxos e utiliza queries avançadas para calcular saldos e disparar alertas automáticos.</p>
                 <div class="tags">
                     <span class="tag">Python</span>
-                    <span class="tag">Pygame</span>
-                    <span class="tag">State Management</span>
+                    <span class="tag">SQLite</span>
+                    <span class="tag">Queries</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Secretária IA (Privacy-First)</h3>
+                <p>Motor LSA offline acoplado a Speech-to-Text para gerar resumos matemáticos de reuniões sem vazar dados para APIs públicas.</p>
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Áudio & NLP</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Gerenciador de Estoque Relacional</h3>
+                <p>Sistema complementar de persistência de dados focado em operações seguras (ACID) de banco de dados para inventários.</p>
+                <div class="tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">SQL</span>
+                    <span class="tag">Backend</span>
                 </div>
             </div>
 
@@ -244,10 +286,10 @@
 
     <footer>
         <h2>Pronto para a próxima missão?</h2>
-        <p>Análise meu código-fonte completo ou inicie contato para oportunidades operacionais.</p>
+        <p>Analise o código-fonte ou inicie contato para oportunidades operacionais.</p>
         <div style="margin-top: 20px;">
             <a href="https://github.com/oxXDanielXxo" target="_blank" class="btn-contato btn-github">Acessar GitHub</a>
-            <a href="mailto:seu-email@dominio.com" class="btn-contato">Iniciar Contato Direto</a>
+            <a href="mailto:seu-email-aqui@gmail.com" class="btn-contato">Iniciar Contato Direto</a>
         </div>
     </footer>
 
